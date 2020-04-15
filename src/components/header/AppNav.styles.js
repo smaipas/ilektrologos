@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import theme from 'src/utils/theme';
 
 export const AppNavContainer = styled.nav`
   display: flex;
@@ -11,6 +12,6 @@ export const AppNavItem = styled.div`
   cursor: pointer;
   transition: color ease-in-out 0.2s;
   &:hover {
-    color: #ffc20e;
+    color: ${theme.secondary};
   }
 `;

@@ -1,7 +1,8 @@
 import styled from 'styled-components';
+import theme from 'src/utils/theme';
 
 export const AppHeaderContainer = styled.header`
-  background-color: #282828;
+  background-color: ${theme.primary};
   display: flex;
   align-items: center;
   justify-content: space-between;

@@ -14,7 +14,7 @@ const navItems = [
 const AppNav = () => (
   <AppNavContainer>
     {navItems.map((item) => (
-      <AppNavItem>{item.label}</AppNavItem>
+      <AppNavItem key={item.label}>{item.label}</AppNavItem>
     ))}
   </AppNavContainer>
 );
