@@ -11,6 +11,7 @@ export const AppNavItem = styled.div`
   color: white;
   cursor: pointer;
   transition: color ease-in-out 0.2s;
+  font-size: 0.9em;
   &:hover {
     color: ${theme.secondary};
   }

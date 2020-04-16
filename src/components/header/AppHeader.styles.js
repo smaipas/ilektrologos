@@ -9,11 +9,19 @@ export const AppHeaderContainer = styled.header`
   padding: 0.5em;
 `;
 
-export const LogoIcon = styled.img`
-  width: 1em;
+export const LogoContainer = styled.div`
+  display: flex;
+  align-items: center;
 `;
+
+export const LogoIcon = styled.div`
+  width: 1.8em;
+`;
+
 export const LogoText = styled.h1`
   color: white;
-  font-size: 1.2em;
+  font-size: 1.3em;
   margin: 0;
+  font-weight: 100;
+  text-transform: uppercase;
 `;
