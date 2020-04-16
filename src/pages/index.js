@@ -5,6 +5,7 @@ import SEO from 'src/components/seo';
 import TobBanner from 'src/components/home/topBanner/TopBanner.comp';
 import Services from 'src/components/home/services/Services.comp';
 import EnergySaving from 'src/components/home/energySaving/EnergySaving.comp';
+import Brands from 'src/components/home/brands/Brands.comp';
 
 const IndexPage = () => (
   <Layout>
@@ -12,6 +13,7 @@ const IndexPage = () => (
     <TobBanner />
     <Services />
     <EnergySaving />
+    <Brands />
   </Layout>
 );
 
