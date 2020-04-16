@@ -3,7 +3,7 @@ import React from 'react';
 import {
   AppNavContainer,
   AppNavItem,
-} from 'src/components/header/AppNav.styles';
+} from 'src/components/common/appHeader/AppNav.styles';
 
 const navItems = [
   { label: 'Αρχική', path: '' },

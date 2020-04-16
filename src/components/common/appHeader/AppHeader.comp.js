@@ -6,10 +6,10 @@ import {
   LogoIcon,
   LogoText,
   LogoContainer,
-} from 'src/components/Header/AppHeader.styles';
+} from 'src/components/common/appHeader/AppHeader.styles';
 
-import Logo from 'src/components/header/Logo';
-import AppNav from 'src/components/header/AppNav.comp';
+import Logo from 'src/components/common/appHeader/Logo';
+import AppNav from 'src/components/common/appHeader/AppNav.comp';
 
 const Header = ({ siteTitle }) => (
   <AppHeaderContainer>
