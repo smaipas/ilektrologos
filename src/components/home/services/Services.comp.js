@@ -9,8 +9,6 @@ import {
   ServiceItemText,
 } from 'src/components/home/services/Services.styles';
 
-// import imagesQuery from 'src/components/home/services/images';
-// import Img from 'gatsby-image';
 import Image from 'src/components/common/Image';
 
 const items = [
