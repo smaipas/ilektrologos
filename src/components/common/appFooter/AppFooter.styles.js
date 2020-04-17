@@ -10,4 +10,8 @@ export const FooterContainer = styled.footer`
   background-color: ${theme.primary};
   color: white;
   font-size: 0.8em;
+  @media (max-width: 800px) {
+    flex-direction: column;
+    justify-content: center;
+  }
 `;
