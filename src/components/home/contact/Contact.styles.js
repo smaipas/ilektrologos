@@ -32,3 +32,12 @@ export const ButtonContainer = styled.div`
   margin-top: 0.5em;
   text-align: center;
 `;
+
+export const FormSubmittedContainer = styled.div`
+  /* display: flex;
+  flex-direction: column;
+  justify-content: center; */
+  text-align: center;
+  padding: 5em 1em;
+  font-size: 1.1em;
+`;

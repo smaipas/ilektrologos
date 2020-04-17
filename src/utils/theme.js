@@ -6,4 +6,5 @@ export default {
   secondaryDark: '#e3aa00',
   textColor: '#282828',
   error: '#e74c3c',
+  success: '#70e058',
 };
