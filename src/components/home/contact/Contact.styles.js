@@ -8,9 +8,6 @@ export const ContactContainer = styled.div`
 `;
 
 export const ContactDetails = styled.div`
-  /* display: flex;
-  align-items: center;
-  justify-content: center; */
   text-align: center;
   font-size: 0.95em;
   & > * {
@@ -34,9 +31,6 @@ export const ButtonContainer = styled.div`
 `;
 
 export const FormSubmittedContainer = styled.div`
-  /* display: flex;
-  flex-direction: column;
-  justify-content: center; */
   text-align: center;
   padding: 5em 1em;
   font-size: 1.1em;
