@@ -12,7 +12,7 @@ const EnergySaving = () => (
   <BackgroundImage>
     <EnergyContainer>
       <AppContainer>
-        <SectionHeader margin={`0 0 0.3em 0`} color={'#fff'}>
+        <SectionHeader margin="0 0 0.3em 0" color="#fff">
           Εξοικονομηση Ενεργειας
         </SectionHeader>
         <EnergyParagraph>
