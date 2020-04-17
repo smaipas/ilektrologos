@@ -1,4 +1,5 @@
 import React from 'react';
+import scrollTo from 'gatsby-plugin-smoothscroll';
 
 import {
   AppNavContainer,
@@ -6,17 +7,27 @@ import {
 } from 'src/components/common/appHeader/AppNav.styles';
 
 const navItems = [
-  { label: 'Αρχική', path: '' },
-  { label: 'Υπηρεσίες', path: '' },
-  { label: 'Επικοινωνία', path: '' },
+  { label: 'Αρχική', path: '#pageTop' },
+  { label: 'Υπηρεσίες', path: '#services' },
+  { label: 'Επικοινωνία', path: '#contact' },
 ];
 
-const AppNav = () => (
-  <AppNavContainer>
-    {navItems.map((item) => (
-      <AppNavItem key={item.label}>{item.label}</AppNavItem>
-    ))}
-  </AppNavContainer>
-);
+const AppNav = ({ layout, closeDrawer }) => {
+  const selectHandler = (i) => {
+    scrollTo(navItems[i].path);
+    if (layout === 'vertical') {
+      closeDrawer();
+    }
+  };
+  return (
+    <AppNavContainer layout={layout}>
+      {navItems.map((item, i) => (
+        <AppNavItem key={item.label} onClick={() => selectHandler(i)}>
+          {item.label}
+        </AppNavItem>
+      ))}
+    </AppNavContainer>
+  );
+};
 
 export default AppNav;

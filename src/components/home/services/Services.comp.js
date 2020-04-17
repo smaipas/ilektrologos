@@ -21,7 +21,7 @@ const items = [
 ];
 
 const ServicesComp = () => (
-  <ServicesContainer>
+  <ServicesContainer id="services">
     <AppContainer>
       <SectionHeader>Ηλεκτρολογικες Υπηρεσιες</SectionHeader>
       <ServicesItemsContainer>

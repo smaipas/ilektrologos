@@ -61,7 +61,7 @@ const Contact = () => {
   };
 
   return (
-    <ContactContainer>
+    <ContactContainer id="contact">
       <div style={{ margin: '1em 0' }}>
         <AppContainer>
           <SectionHeader color="white" margin="0 0 1em 0">

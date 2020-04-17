@@ -10,7 +10,7 @@ import {
 } from 'src/components/home/topBanner/TopBanner.styles';
 
 const TopBanner = () => (
-  <TopBannerContainer>
+  <TopBannerContainer id="pageTop">
     <ImageContainer>
       <Image />
     </ImageContainer>

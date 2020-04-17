@@ -1,9 +1,31 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+
 import theme from 'src/utils/theme';
+
+const horizontalNavContainerStyles = css`
+  @media (max-width: 800px) {
+    display: none;
+  }
+`;
+
+const verticalNavContainerStyles = css`
+  flex-direction: column;
+  padding: 2em 1.5em;
+`;
+
+const verticalNavItemStyles = css`
+  width: 100%;
+  font-size: 1.2em;
+  margin: 0.5em 0;
+`;
 
 export const AppNavContainer = styled.nav`
   display: flex;
   align-items: center;
+  ${({ layout }) =>
+    layout === 'horizontal'
+      ? horizontalNavContainerStyles
+      : verticalNavContainerStyles};
 `;
 
 export const AppNavItem = styled.div`
@@ -15,4 +37,5 @@ export const AppNavItem = styled.div`
   &:hover {
     color: ${theme.secondary};
   }
+  ${({ layout }) => (layout === 'horizontal' ? null : verticalNavItemStyles)};
 `;
