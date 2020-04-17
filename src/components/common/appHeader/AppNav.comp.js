@@ -22,7 +22,11 @@ const AppNav = ({ layout, closeDrawer }) => {
   return (
     <AppNavContainer layout={layout}>
       {navItems.map((item, i) => (
-        <AppNavItem key={item.label} onClick={() => selectHandler(i)}>
+        <AppNavItem
+          layout={layout}
+          key={item.label}
+          onClick={() => selectHandler(i)}
+        >
           {item.label}
         </AppNavItem>
       ))}
