@@ -7,21 +7,18 @@ import {
   ContactForm,
   InputFieldsContainer,
   ButtonContainer,
-  FormSubmittedContainer,
 } from 'src/components/home/contact/Contact.styles';
 import AppContainer from 'src/components/common/container/AppContainer.comp';
 import SectionHeader from 'src/components/common/sectionHeader/SectionHeader.comp';
 import FormInput from 'src/components/home/contact/FormInput.comp';
 import AppButton from 'src/components/common/appButton/AppButton.comp';
+import FormSubmittingOverlay from 'src/components/home/contact/FormSubmittingOverlay.comp';
 import theme from 'src/utils/theme';
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faPhoneAlt,
   faEnvelope,
   faMapMarkerAlt,
-  faCheck,
-  faTimes,
 } from '@fortawesome/free-solid-svg-icons';
 
 const contactDetailsItems = [
@@ -54,6 +51,9 @@ const Contact = () => {
   const formSubmittedHandler = (status) => {
     setFormSubmittedSuccessfully(status);
     setFormSubmitted(true);
+    setTimeout(() => {
+      setLoading(false);
+    }, 3000);
     setTimeout(() => {
       setFormSubmitted(false);
       setFormSubmittedSuccessfully(undefined);
@@ -182,23 +182,16 @@ const Contact = () => {
                 )}
               />
             </ContactForm>
-          ) : (
-            <FormSubmittedContainer>
-              <FontAwesomeIcon
-                icon={formSubmittedSuccessfully ? faCheck : faTimes}
-                color={formSubmittedSuccessfully ? theme.success : theme.error}
-                style={{ marginBottom: '0.5em' }}
-                size="2x"
-              />
-              <div>
-                {formSubmittedSuccessfully
-                  ? 'Your message has been sent!'
-                  : 'An error occurred. Please contact us via phone.'}
-              </div>
-            </FormSubmittedContainer>
-          )}
+          ) : null}
         </AppContainer>
       </div>
+      {formSubmitted ? (
+        <FormSubmittingOverlay
+          status={loading}
+          responseSucceed={formSubmittedSuccessfully}
+          close={() => setFormSubmitted(false)}
+        />
+      ) : null}
     </ContactContainer>
   );
 };
