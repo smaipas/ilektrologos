@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Form, Field } from 'react-final-form';
 
+import { api } from 'src/utils/api';
+
 import {
   ContactContainer,
   ContactDetails,
@@ -44,16 +46,21 @@ const Contact = () => {
 
   const onSubmit = async (values) => {
     setLoading(true);
-    console.log('submit', values);
-    formSubmittedHandler(true);
+    try {
+      const response = await api.post('/contact/submit-contact-form', values);
+      // if (response.data.statusCode !== 200) {
+      //   throw new Error('Something went wrong...');
+      // }
+      formSubmittedHandler(true);
+    } catch (error) {
+      formSubmittedHandler(false);
+    }
+    setLoading(false);
   };
 
   const formSubmittedHandler = (status) => {
     setFormSubmittedSuccessfully(status);
     setFormSubmitted(true);
-    setTimeout(() => {
-      setLoading(false);
-    }, 3000);
     setTimeout(() => {
       setFormSubmitted(false);
       setFormSubmittedSuccessfully(undefined);
@@ -185,7 +192,7 @@ const Contact = () => {
           ) : null}
         </AppContainer>
       </div>
-      {formSubmitted ? (
+      {formSubmitted || loading ? (
         <FormSubmittingOverlay
           status={loading}
           responseSucceed={formSubmittedSuccessfully}

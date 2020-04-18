@@ -1,0 +1,4 @@
+Name: {{name}}
+Email: {{email}}
+{{#if tel}}Telephone: {{tel}}{{/if}}
+{{#if message}}Message: {{message}}{{/if}}

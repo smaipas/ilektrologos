@@ -1,0 +1,33 @@
+<html>
+  <head>
+    <title>ilektrologos.online - Nicosia Electrician</title>
+  </head>
+  <body style="margin: 0; padding: 0;" >
+    <div style="width: 100%; height: 100%; background-color:rgb(221, 226, 233);">
+        <div style="text-align: center; margin-top: 10px;">
+            <img
+              src="https://ilektrologos.online/logo.png"
+              style="height: 180px;"
+              alt="ilektrologos.online-logo"
+            />
+          </div>
+          <div style="background-color: white; width: 80%; margin: 0 auto; padding: 2em;">
+            <div style="text-align: center; font-size: 1.5em; text-transform: uppercase; font-weight: 600; padding-bottom: 0.4em; border-bottom: 1px solid #dddedf;">
+              Contact Request
+            </div>
+            <div style="padding: 1em;">
+                <div style="background-color: #e4edf5; padding: 0.2em; font-weight: 600; margin: 1em 0;">Contact Details</div>
+                <b>Name:</b> {{name}}<br/>
+                <b>Email:</b> {{email}}<br/>
+                <b>Telephone:</b> {{tel}}<br/>
+                <br/>
+                {{#if message}}
+                <div style="background-color: #e4edf5; padding: 0.2em; font-weight: 600; margin: 2em 0 1em 0;">Message</div> 
+                <b>Message:</b> {{message}}<br/>
+                {{/if}}
+            </div>
+          </div>
+          <div style="text-align: center; font-size: 0.8em; margin: 1em 0;">ilektrologos.online - Nicosia Electrician</div>
+    </div>
+  </body>
+</html>
