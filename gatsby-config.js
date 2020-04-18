@@ -46,7 +46,6 @@ module.exports = {
         path: `${__dirname}/src/intl`,
         languages: ['en', 'el'],
         defaultLanguage: 'en',
-        redirect: true,
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
