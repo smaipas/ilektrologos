@@ -40,3 +40,18 @@ export const AppNavMobileButton = styled(AppButton)`
     display: none;
   }
 `;
+
+export const AppNavContainer = styled.div`
+  display: flex;
+  align-items: center;
+  @media (max-width: 800px) {
+    display: none;
+  }
+`;
+
+export const Separator = styled.div`
+  width: 1px;
+  height: 1em;
+  background-color: rgba(255, 255, 255, 0.5);
+  margin: 0 0.5em;
+`;

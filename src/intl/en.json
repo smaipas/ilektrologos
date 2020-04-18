@@ -1,0 +1,43 @@
+{
+  "page-title": "Nicosia Electrician",
+  "page-description": "Electrician Online - Electrical Installations in Nicosia",
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "contact": "Contact"
+  },
+  "home": {
+    "top-banner": {
+      "title": "Electrical power problems?",
+      "subtitle": "We are able to service everything from a light bulb to wiring a complete high rise building."
+    },
+    "services": {
+      "title": "Electrical Services",
+      "service-1": "Electrical Installations",
+      "service-2": "Surveillance Cameras",
+      "service-3": "Renovations",
+      "service-4": "Alarms",
+      "service-5": "Automation",
+      "service-6": "Photovoltaic Systems"
+    },
+    "energy-saving": {
+      "title": "Energy Saving",
+      "text": "We are here to help you to reduce energy consumption for your home or your business."
+    },
+    "contact": {
+      "title": "Contact us",
+      "info-address": "Nicosia, Cyprus",
+      "form": {
+        "name": "YOUR NAME *",
+        "email": "YOUR EMAIL *",
+        "tel": "YOUR TELEPHONE *",
+        "message": "YOUR MESSAGE *",
+        "submit": "Send Message"
+      },
+      "overlay": {
+        "success": "Your message has been sent!",
+        "failed": "An error occurred. Please contact us via phone."
+      }
+    }
+  }
+}

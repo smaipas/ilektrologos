@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Form, Field } from 'react-final-form';
+import { useIntl } from 'gatsby-plugin-intl';
 
 import { api } from 'src/utils/api';
 
@@ -23,12 +24,6 @@ import {
   faMapMarkerAlt,
 } from '@fortawesome/free-solid-svg-icons';
 
-const contactDetailsItems = [
-  { text: '95 16 88 70', icon: faPhoneAlt },
-  { text: 'alexandrosmaipaselectrician@gmail.com', icon: faEnvelope },
-  { text: 'Λευκωσία, Κύπρος', icon: faMapMarkerAlt },
-];
-
 import {
   required,
   isNumber,
@@ -38,19 +33,29 @@ import {
 } from 'src/utils/validations';
 
 const Contact = () => {
+  const intl = useIntl();
   const [loading, setLoading] = useState(false);
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [formSubmittedSuccessfully, setFormSubmittedSuccessfully] = useState(
     undefined
   );
 
+  const contactDetailsItems = [
+    { text: '95 16 88 70', icon: faPhoneAlt },
+    { text: 'alexandrosmaipaselectrician@gmail.com', icon: faEnvelope },
+    {
+      text: intl.formatMessage({ id: 'home.contact.info-address' }),
+      icon: faMapMarkerAlt,
+    },
+  ];
+
   const onSubmit = async (values) => {
     setLoading(true);
     try {
       const response = await api.post('/contact/submit-contact-form', values);
-      // if (response.data.statusCode !== 200) {
-      //   throw new Error('Something went wrong...');
-      // }
+      if (response.data.statusCode !== 200) {
+        throw new Error('Something went wrong...');
+      }
       formSubmittedHandler(true);
     } catch (error) {
       formSubmittedHandler(false);
@@ -72,7 +77,7 @@ const Contact = () => {
       <div style={{ margin: '1em 0' }}>
         <AppContainer>
           <SectionHeader color="white" margin="0 0 1em 0">
-            Επικοινωνια
+            {intl.formatMessage({ id: 'home.contact.title' })}
           </SectionHeader>
           <ContactDetails>
             {contactDetailsItems.map((item, i) => (
@@ -106,7 +111,9 @@ const Contact = () => {
                               fieldType="input"
                               {...input}
                               type="text"
-                              placeholder="YOUR NAME *"
+                              placeholder={intl.formatMessage({
+                                id: 'home.contact.form.name',
+                              })}
                               errorMsg={
                                 meta.error && meta.touched ? meta.error : null
                               }
@@ -123,7 +130,9 @@ const Contact = () => {
                               fieldType="input"
                               {...input}
                               type="text"
-                              placeholder="YOUR EMAIL *"
+                              placeholder={intl.formatMessage({
+                                id: 'home.contact.form.email',
+                              })}
                               errorMsg={
                                 meta.error && meta.touched ? meta.error : null
                               }
@@ -144,7 +153,9 @@ const Contact = () => {
                               fieldType="input"
                               {...input}
                               type="text"
-                              placeholder="YOUR TELEPHONE *"
+                              placeholder={intl.formatMessage({
+                                id: 'home.contact.form.tel',
+                              })}
                               errorMsg={
                                 meta.error && meta.touched ? meta.error : null
                               }
@@ -163,7 +174,9 @@ const Contact = () => {
                               fieldType="textarea"
                               {...input}
                               type="text"
-                              placeholder="YOUR MESSAGE *"
+                              placeholder={intl.formatMessage({
+                                id: 'home.contact.form.message',
+                              })}
                               rows="5"
                               errorMsg={
                                 meta.error && meta.touched ? meta.error : null
@@ -182,7 +195,7 @@ const Contact = () => {
                         statusLoading={loading}
                         disabled={submitting || loading}
                       >
-                        Send Message
+                        {intl.formatMessage({ id: 'home.contact.form.submit' })}
                       </AppButton>
                     </ButtonContainer>
                   </form>

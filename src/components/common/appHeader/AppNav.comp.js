@@ -1,18 +1,21 @@
 import React from 'react';
 import scrollTo from 'gatsby-plugin-smoothscroll';
+import { useIntl } from 'gatsby-plugin-intl';
 
 import {
   AppNavContainer,
   AppNavItem,
 } from 'src/components/common/appHeader/AppNav.styles';
 
-const navItems = [
-  { label: 'Αρχική', path: '#pageTop' },
-  { label: 'Υπηρεσίες', path: '#services' },
-  { label: 'Επικοινωνία', path: '#contact' },
-];
-
 const AppNav = ({ layout, closeDrawer }) => {
+  const intl = useIntl();
+
+  const navItems = [
+    { label: intl.formatMessage({ id: 'nav.home' }), path: '#pageTop' },
+    { label: intl.formatMessage({ id: 'nav.services' }), path: '#services' },
+    { label: intl.formatMessage({ id: 'nav.contact' }), path: '#contact' },
+  ];
+
   const selectHandler = (i) => {
     scrollTo(navItems[i].path);
     if (layout === 'vertical') {

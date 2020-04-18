@@ -6,7 +6,9 @@ import {
   LogoIcon,
   LogoText,
   LogoContainer,
+  AppNavContainer,
   AppNavMobileButton,
+  Separator,
 } from 'src/components/common/appHeader/AppHeader.styles';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -15,6 +17,7 @@ import { faBars } from '@fortawesome/free-solid-svg-icons';
 import Logo from 'src/components/common/appHeader/Logo';
 import AppNav from 'src/components/common/appHeader/AppNav.comp';
 import AppDrawer from 'src/components/common/appDrawer/AppDrawer.comp';
+import AppLangSelector from 'src/components/common/appLangSelector/AppLangSelector.comp';
 
 const Header = ({ siteTitle }) => {
   const [drawerStatus, setDrawerStatus] = useState(false);
@@ -28,7 +31,11 @@ const Header = ({ siteTitle }) => {
           </LogoIcon>
           <LogoText>{siteTitle}</LogoText>
         </LogoContainer>
-        <AppNav layout="horizontal" />
+        <AppNavContainer>
+          <AppNav layout="horizontal" />
+          <Separator />
+          <AppLangSelector />
+        </AppNavContainer>
         <AppNavMobileButton onClick={() => setDrawerStatus(true)}>
           <FontAwesomeIcon icon={faBars} />
         </AppNavMobileButton>
