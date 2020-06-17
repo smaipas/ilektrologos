@@ -47,7 +47,7 @@ module.exports.submitContactForm = async (event) => {
   try {
     const emailParams = generateEmailParams(event.body);
     const data = await ses.sendTemplatedEmail(emailParams).promise();
-    if (data.data.statusCode !== 200) {
+    if (data.statusCode && data.statusCode === 500) {
       throw new Error(
         'Something went wrong. Please try again or contact us through email.'
       );
