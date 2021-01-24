@@ -41,7 +41,7 @@ const Contact = () => {
   );
 
   const contactDetailsItems = [
-    { text: '95 16 88 70', icon: faPhoneAlt },
+    { text: '95 951232', icon: faPhoneAlt },
     { text: 'alexandrosmaipaselectrician@gmail.com', icon: faEnvelope },
     {
       text: intl.formatMessage({ id: 'home.contact.info-address' }),
